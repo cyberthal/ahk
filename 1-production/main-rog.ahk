@@ -26,6 +26,11 @@ else if keystate = up
 SetEnv, keystate, down
 return
 
+; * switch to manjaro
+
+CapsLock & 5::
+WinActivate, Manjaro 15.09 (64bit).vdi [Running] - Oracle VM VirtualBox
+return 
 
 ; * Everything below applies only to Emacs windows
 
