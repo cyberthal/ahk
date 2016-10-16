@@ -28,11 +28,9 @@ return
 WinActivate, Manjaro 15.09 (64bit).vdi [Running] - Oracle VM VirtualBox
 return
 
-; ** the busy capslock
-
 ; ** toggle manjaro H-q
 
-~AppsKey & q::
+F12 & s::
 WinActivate, Manjaro 15.09 (64bit).vdi [Running] - Oracle VM VirtualBox
 return 
 
