@@ -1,6 +1,13 @@
 ; * main windows ahk script
 
+; ** preliminaries
+
 #InstallKeybdHook
+
+; has to trigger before other wintitle stuff
+
+SetTitleMatchMode, Regex
+SetTitleMatchMode, Slow
 
 ; This file is my primary Windows Autohotkey script.  It runs at startup and fixes keybinds to my preference.  So far it has only been tested on RoG laptop.
 
@@ -8,39 +15,37 @@
 
 ; ** jump dexpot desktops by media keys
 
-Browser_Back::
+~Browser_Back::
 Send ^!+1
+sleep, 1
 return
 
-Browser_Forward::
+~Browser_Forward::
 Send ^!+2
+sleep, 1
 return
 
-Browser_Stop::
+~Browser_Stop::
 Send ^!+3
 return
 
-Browser_Refresh::
+~Browser_Refresh::
 Send ^!+4
-return
-
-*Browser_Search::
-WinActivate, Manjaro 15.09 (64bit).vdi [Running] - Oracle VM VirtualBox
 return
 
 ; ** toggle manjaro H-q
 
-F12 & s::
-WinActivate, Manjaro 15.09 (64bit).vdi [Running] - Oracle VM VirtualBox
+~F12 & s::
+WinActivate, .*- Oracle VM VirtualBox
 return 
 
 ; **  toggle spacemacs with capslock + 4, since it won't C-z anymore
 
 CapsLock & 4::
-IfWinActive, emacs@rog
+IfWinActive, emacs@ROG
     SendInput !{ESC}
 else
-WinActivate, emacs@rog
+WinActivate, emacs@ROG
 return 
 
 ; ** rejected 
